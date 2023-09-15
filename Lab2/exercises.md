@@ -10,20 +10,37 @@ Do the names of the member functions correlate to what they do? That is, are the
   - A good example would be a function called 'pop' which only removes one element.
   - A bad example would be a function called 'pop' where one element is removed **and** that value is returned. A better name would be 'popAndGet' or 'popAndReturn', which captures the two events happening.
 
-*Edit your responses here*
+A:
+A well-chosen function name is a clear and concise verb that effectively communicates the action it performs. This practice enhances code readability and makes it easier for developers to understand the function's purpose and usage within the codebase.
 
 2. How does a dictionary differ from a list? (i.e. What is the underlying data structure of each container.)
 
-*Edit your response here*
+A:
+Dictionary: Uses a hash table to store key-value pairs, allowing fast key-based access. Ideal for data with unique keys.
+
+List: Utilizes dynamic arrays or linked lists to maintain ordered collections. Suitable for sequences of data where order matters.
 
 3. Does a list allow for random access? Meaning can I access any element(e.g. myList[7])?
 
-*Edit your response here*
+A:
+Yes, a list allows for random access, which means you can access any element in the list by specifying its index. Lists are ordered collections where elements are stored sequentially, and you can retrieve any element by providing its index. 
 
 4. Observe that all the container data structures (i.e. list, set, dictionary, etc.) can work with any data type (integers, floats, custom data types, etc.). 
 What do you think are the pros/cons of a library that can work with any data type?
 
-*Edit your response here*
+A:
+Pros:
+Versatility
+Flexibility
+Interoperability
+Reduced development time
+
+Cons:
+Complexity
+Potential performance issues
+Ambiguity
+Lack of type safety
+Steeper learning curve
 
 ## requests
 
