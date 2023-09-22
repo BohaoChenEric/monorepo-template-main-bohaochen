@@ -3,13 +3,21 @@ import json
 class CustomEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, complex):
-            return {"complex": True, "real": obj.real, "imag": obj.imag}
-        if isinstance(obj, range):
-            return {"range": True, "start": obj.start, "stop": obj.stop, "step": obj.step}
+            return {"real": obj.real, "imag": obj.imag}
+        elif isinstance(obj, range):
+            return {"start": obj.start, "stop": obj.stop, "step": obj.step}
         return super().default(obj)
 
-def dumps(obj, *args, **kwargs):
-    return json.dumps(obj, cls=CustomEncoder, *args, **kwargs)
+def custom_dumps(obj, **kwargs):
+    return json.dumps(obj, cls=CustomEncoder, **kwargs)
 
-def loads(s, *args, **kwargs):
-    return json.loads(s, *args, **kwargs)
+class CustomDecoder(json.JSONDecoder):
+    def object_hook(self, obj):
+        if "__complex__" in obj:
+            return complex(obj["real"], obj["imag"])
+        elif "__range__" in obj:
+            return range(obj["start"], obj["stop"], obj["step"])
+        return obj
+
+def custom_loads(s, **kwargs):
+    return json.loads(s, cls=CustomDecoder, **kwargs)

@@ -1,26 +1,21 @@
+import json
 import unittest
-import jsonapi
+from jsonapi import custom_dumps, custom_loads
 
-class TestCustomJSON(unittest.TestCase):
-    def test_custom_encoder_complex(self):
-        obj = complex(3.0, 4.0)
-        encoded = jsonapi.dumps(obj)
-        self.assertEqual(encoded, '{"complex": true, "real": 3.0, "imag": 4.0}')
+class TestCustomJSONEncodingDecoding(unittest.TestCase):
+    def test_complex_encoding_decoding(self):
+        # Test encoding and decoding of complex numbers
+        complex_number = complex(2.5, 3.0)
+        encoded = custom_dumps(complex_number)
+        decoded = custom_loads(encoded)
+        self.assertEqual(complex_number, decoded)
 
-    def test_custom_encoder_range(self):
-        obj = range(1, 5, 2)
-        encoded = jsonapi.dumps(obj)
-        self.assertEqual(encoded, '{"range": true, "start": 1, "stop": 5, "step": 2}')
-
-    def test_dumps(self):
-        obj = {"name": "John", "age": 30}
-        encoded = jsonapi.dumps(obj)
-        self.assertEqual(encoded, '{"name": "John", "age": 30}')
-
-    def test_loads(self):
-        json_str = '{"name": "Alice", "age": 25}'
-        decoded = jsonapi.loads(json_str)
-        self.assertEqual(decoded, {"name": "Alice", "age": 25})
+    def test_range_encoding_decoding(self):
+        # Test encoding and decoding of range objects
+        my_range = range(1, 10, 2)
+        encoded = custom_dumps(my_range)
+        decoded = custom_loads(encoded)
+        self.assertEqual(list(my_range), list(decoded))
 
 if __name__ == '__main__':
     unittest.main()
