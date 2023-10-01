@@ -6,31 +6,34 @@
 
 <hr>
 
-**Use Case**: *use-case-title*
+**Use Case**: Clear Canvas
 
-**Primary Actor**: *primary-actor*
+**Primary Actor**: User
 
-**Goal in Context**: *the aim of the primary-actor in a particular circumstance*
+**Goal in Context**: The user intends to clear the entire canvas.
 
-**Preconditions**: *conditions that must be true before the scenario may play out*
+**Preconditions**: The application is running.
 
-**Trigger**: *an action or actions that initiate the scenario*
+**Trigger**: User presses the "Space" key.
   
-**Scenario**: *an enumerated list of steps describing the actions and interactions of the primary actor with the system*
+**Scenario**: 
+1. User presses the "Space" key.
+2. The system clears all pixels on the canvas.
+3. The entire canvas becomes a solid color with the last selected drawing color.
  
-**Exceptions**: *errors or faults that may occur during the scenario. Should include remedy/corrective action taken by the primary actor*
+**Exceptions**: N/A
 
-**Priority**: *relative importance of this use case compared to other use cases*
+**Priority**: High
 
-**When available**: *the targeted release that covers this use case*
+**When available**: First release
 
-**Channel to actor**: *the means through which the primary actor and the system communicate*
+**Channel to actor**: User interacts with the system through keyboard input.
 
-**Secondary Actor**: *any other actors – people or systems – that may be involved in the scenario*
+**Secondary Actor**: N/A
 
-**Channels to Secondary Actors**: *the means through which any secondary actors may interact with the system or other actors*
+**Channels to Secondary Actors**: N/A
 
-**Open Issues**: *notes, concerns, or other materials*
+**Open Issues**: None
 
 <hr>
 
