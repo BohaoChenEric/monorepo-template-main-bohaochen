@@ -1,5 +1,5 @@
 One-line description:
-As a <user> I can <securely store my preferred payment methods in my digital wallet>, so that <I can check out in seconds without ever entering an address or card info>
+As a user I can securely store my preferred payment methods in my digital wallet, so that I can check out in seconds without ever entering an address or card info
 
 Acceptance Criteria:
 
