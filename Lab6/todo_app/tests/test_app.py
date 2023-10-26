@@ -14,9 +14,9 @@ def test_read_book_by_path_param():
     assert response.json() == {"msg": "some-book"}
 
 def test_read_books_by_title():
-    response = client.get("/books/", params={"title": "A Great Book"})
+    response = client.get("/books/", params={"title": "A Book"})
     assert response.status_code == 200
-    assert response.json() == {"msg": "A Great Book"}
+    assert response.json() == {"msg": "A Book"}
 
 def test_create_book():
     response = client.post("/books/create_book", json={"title": "New Book", "author": "Some Author"})
